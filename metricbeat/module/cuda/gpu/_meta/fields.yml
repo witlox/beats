@@ -1,0 +1,70 @@
+- name: gpu
+  type: group
+  description: >
+    `gpu` contains local GPU stats.
+  fields:
+    - name: gpus
+      type: long
+      description: >
+        The number of GPUs present on the host. The non-normalized percentages will have a maximum value of `100% * cores`.
+        The normalized percentages already take this value into account and have a maximum value of 100%.
+    - name: gpu[number].type
+      type: string
+      description: >
+        The GPU ProductName.
+    - name: gpu[number].temp
+      type: long
+      description: >
+        The current temperature of the GPU in degrees C.
+    - name: gpu[number].fan
+      type: long
+      description: >
+        The current speed of the GPU fan in RPM.
+    - name: gpu[number].pwrdrw
+      type: string
+      description: >
+        The current power usage in Watts.
+    - name: gpu[number].pwrlim
+      type: long
+      description: >
+        The current power limit in Watts.
+    - name: gpu[number].perfst
+      type: string
+      description: >
+        The current performance state for the GPU. States range from P0 (maximum performance) to P12 (minimum performance).
+    - name: gpu[number].memtot
+      type: long
+      description: >
+        Total frame buffer memory information. Reported total memory is affected by ECC state.
+        If ECC is enabled the total available memory is decreased by several percent, due to the requisite parity bits.
+        The driver may also reserve a small amount of memory for internal use, even without active work on the GPU. For all products.
+    - name: gpu[number].memfree
+      type: long
+      description: >
+        Free frame buffer memory information. Reported total memory is affected by ECC state.
+    - name: gpu[number].memused
+      type: long
+      description: >
+        Available frame buffer memory information. Reported total memory is affected by ECC state.
+    - name: gpu[number].gpupct
+      type: scaled_float
+      format: percent
+      description: >
+        Percent of time over the past sample period during which one or more kernels was executing on the GPU.
+    - name: gpu[number].mempct
+      type: scaled_float
+      format: percent
+      description: >
+        Percent of time over the past sample period during which global (device) memory was being read or written.
+    - name: gpu[number].gclock
+      type: long
+      description: >
+        Current frequency of graphics (shader) clock in MHz.
+    - name: gpu[number].mclock
+      type: long
+      description: >
+        Current frequency of memory clock in MHz.
+    - name: gpu[number].smclock
+      type: long
+      description: >
+        Current frequency of SM (Streaming Multiprocessor) clock in MHz.

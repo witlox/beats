@@ -1,0 +1,9 @@
+- key: cuda
+  title: "cuda"
+  description: >
+    GPU status metrics collected from nvidia-smi.
+  fields:
+    - name: cuda
+      type: group
+      description: >
+      fields:

@@ -1,0 +1,14 @@
+== CUDA module
+
+This module periodically fetches metrics from the GPU using nvidia-smi.
+
+[float]
+=== Module-specific configuration notes
+
+- a NVidia CUDA compatible graphics card needs to be installed
+- nvidia-smi needs to be installed on the system
+
+[float]
+=== Compatibility
+
+This is expected to work with all nvidia-smi versions.

@@ -1,0 +1,3 @@
+- module: cuda
+  metricsets: ["status"]
+  period: 10s

@@ -1,0 +1,5 @@
+=== Cuda gpu metricset
+
+The Cuda `gpu` metricset provides GPU statistics.
+
+This metricset is available on all systems where nvidia-smi is working.

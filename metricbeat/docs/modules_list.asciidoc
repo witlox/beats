@@ -6,6 +6,7 @@ This file is generated! See scripts/docs_collector.py
   * <<metricbeat-module-apache,Apache>>
   * <<metricbeat-module-ceph,Ceph>>
   * <<metricbeat-module-couchbase,Couchbase>>
+  * <<metricbeat-module-cuda,Cuda>>
   * <<metricbeat-module-docker,Docker>>
   * <<metricbeat-module-dropwizard,Dropwizard>>
   * <<metricbeat-module-elasticsearch,Elasticsearch>>
@@ -38,6 +39,7 @@ include::modules/aerospike.asciidoc[]
 include::modules/apache.asciidoc[]
 include::modules/ceph.asciidoc[]
 include::modules/couchbase.asciidoc[]
+include::modules/cuda.asciidoc[]
 include::modules/docker.asciidoc[]
 include::modules/dropwizard.asciidoc[]
 include::modules/elasticsearch.asciidoc[]

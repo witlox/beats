@@ -19,6 +19,7 @@ grouped in the following categories:
 * <<exported-fields-cloud>>
 * <<exported-fields-common>>
 * <<exported-fields-couchbase>>
+* <<exported-fields-cuda>>
 * <<exported-fields-docker-processor>>
 * <<exported-fields-docker>>
 * <<exported-fields-dropwizard>>
@@ -346,6 +347,334 @@ Number of records in this namespace for this node.
 type: boolean
 
 If true this namespace is currently not allowing writes.
+
+
+[[exported-fields-apache]]
+== Apache fields
+
+Apache HTTPD server metricsets collected from the Apache web server.
+
+
+
+[float]
+== apache fields
+
+`apache` contains the metrics that were scraped from Apache.
+
+
+
+[float]
+== status fields
+
+`status` contains the metrics that were scraped from the Apache status page.
+
+
+
+[float]
+=== `apache.status.hostname`
+
+type: keyword
+
+Apache hostname.
+
+
+[float]
+=== `apache.status.total_accesses`
+
+type: long
+
+Total number of access requests.
+
+
+[float]
+=== `apache.status.total_kbytes`
+
+type: long
+
+Total number of kilobytes served.
+
+
+[float]
+=== `apache.status.requests_per_sec`
+
+type: scaled_float
+
+Requests per second.
+
+
+[float]
+=== `apache.status.bytes_per_sec`
+
+type: scaled_float
+
+Bytes per second.
+
+
+[float]
+=== `apache.status.bytes_per_request`
+
+type: scaled_float
+
+Bytes per request.
+
+
+[float]
+=== `apache.status.workers.busy`
+
+type: long
+
+Number of busy workers.
+
+
+[float]
+=== `apache.status.workers.idle`
+
+type: long
+
+Number of idle workers.
+
+
+[float]
+== uptime fields
+
+Uptime stats.
+
+
+
+[float]
+=== `apache.status.uptime.server_uptime`
+
+type: long
+
+Server uptime in seconds.
+
+
+[float]
+=== `apache.status.uptime.uptime`
+
+type: long
+
+Server uptime.
+
+
+[float]
+== cpu fields
+
+CPU stats.
+
+
+
+[float]
+=== `apache.status.cpu.load`
+
+type: scaled_float
+
+CPU Load.
+
+
+[float]
+=== `apache.status.cpu.user`
+
+type: scaled_float
+
+CPU user load.
+
+
+[float]
+=== `apache.status.cpu.system`
+
+type: scaled_float
+
+System cpu.
+
+
+[float]
+=== `apache.status.cpu.children_user`
+
+type: scaled_float
+
+CPU of children user.
+
+
+[float]
+=== `apache.status.cpu.children_system`
+
+type: scaled_float
+
+CPU of children system.
+
+
+[float]
+== connections fields
+
+Connection stats.
+
+
+
+[float]
+=== `apache.status.connections.total`
+
+type: long
+
+Total connections.
+
+
+[float]
+=== `apache.status.connections.async.writing`
+
+type: long
+
+Async connection writing.
+
+
+[float]
+=== `apache.status.connections.async.keep_alive`
+
+type: long
+
+Async keeped alive connections.
+
+
+[float]
+=== `apache.status.connections.async.closing`
+
+type: long
+
+Async closed connections.
+
+
+[float]
+== load fields
+
+Load averages.
+
+
+
+[float]
+=== `apache.status.load.1`
+
+type: scaled_float
+
+Load average for the last minute.
+
+
+[float]
+=== `apache.status.load.5`
+
+type: scaled_float
+
+Load average for the last 5 minutes.
+
+
+[float]
+=== `apache.status.load.15`
+
+type: scaled_float
+
+Load average for the last 15 minutes.
+
+
+[float]
+== scoreboard fields
+
+Scoreboard metrics.
+
+
+
+[float]
+=== `apache.status.scoreboard.starting_up`
+
+type: long
+
+Starting up.
+
+
+[float]
+=== `apache.status.scoreboard.reading_request`
+
+type: long
+
+Reading requests.
+
+
+[float]
+=== `apache.status.scoreboard.sending_reply`
+
+type: long
+
+Sending Reply.
+
+
+[float]
+=== `apache.status.scoreboard.keepalive`
+
+type: long
+
+Keep alive.
+
+
+[float]
+=== `apache.status.scoreboard.dns_lookup`
+
+type: long
+
+Dns Lookups.
+
+
+[float]
+=== `apache.status.scoreboard.closing_connection`
+
+type: long
+
+Closing connections.
+
+
+[float]
+=== `apache.status.scoreboard.logging`
+
+type: long
+
+Logging
+
+
+[float]
+=== `apache.status.scoreboard.gracefully_finishing`
+
+type: long
+
+Gracefully finishing.
+
+
+[float]
+=== `apache.status.scoreboard.idle_cleanup`
+
+type: long
+
+Idle cleanups.
+
+
+[float]
+=== `apache.status.scoreboard.open_slot`
+
+type: long
+
+Open slots.
+
+
+[float]
+=== `apache.status.scoreboard.waiting_for_connection`
+
+type: long
+
+Waiting for connections.
+
+
+[float]
+=== `apache.status.scoreboard.total`
+
+type: long
+
+Total.
 
 
 [[exported-fields-apache]]
@@ -3692,7 +4021,7 @@ Number of data transfers aborted by the server. This value is included in haprox
 
 type: integer
 
-Number of backend servers that are active, meaning that they are healthy and can receive requests from the load balancer. 
+Number of backend servers that are active, meaning that they are healthy and can receive requests from the load balancer.
 
 
 [float]
@@ -7498,7 +7827,7 @@ type: long
 
 format: bytes
 
-Point at which the memory alarm will go off. 
+Point at which the memory alarm will go off.
 
 
 [float]
@@ -7506,7 +7835,7 @@ Point at which the memory alarm will go off.
 
 type: long
 
-Memory used in bytes. 
+Memory used in bytes.
 
 
 [float]
@@ -7530,7 +7859,7 @@ Number of Mnesia transactions which have been performed that did not require wri
 
 type: long
 
-Number of messages which have been read from the message store. 
+Number of messages which have been read from the message store.
 
 
 [float]
@@ -7538,7 +7867,7 @@ Number of messages which have been read from the message store.
 
 type: long
 
-Number of messages which have been written to the message store. 
+Number of messages which have been written to the message store.
 
 
 [float]
@@ -7586,7 +7915,7 @@ Number of records written to the queue index journal.
 
 type: long
 
-Number of records read from the queue index. 
+Number of records read from the queue index.
 
 
 [float]
@@ -7594,7 +7923,7 @@ Number of records read from the queue index.
 
 type: long
 
-Number of records written to the queue index. 
+Number of records written to the queue index.
 
 
 [float]
@@ -7602,7 +7931,7 @@ Number of records written to the queue index.
 
 type: long
 
-Average number of Erlang processes waiting to run. 
+Average number of Erlang processes waiting to run.
 
 
 [float]
@@ -7610,7 +7939,7 @@ Average number of Erlang processes waiting to run.
 
 type: long
 
-File descriptors available for use as sockets. 
+File descriptors available for use as sockets.
 
 
 [float]
